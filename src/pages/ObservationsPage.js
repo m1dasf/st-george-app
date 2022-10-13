@@ -7,7 +7,6 @@ import axios from 'axios';
 
 function ObservationsPage() {
     const baseUrl = useSelector(state => state.baseUrl);
-    const currentClassId = useSelector(state => state.currentItem.classId)
     const currentPatient = useSelector(state => state.currentPatient);
     const navigate = useNavigate();
     const [observationArray, setObservationArray] = useState([])
