@@ -89,7 +89,7 @@ function MenuPage() {
         <div className='MenuPage not-admin'>
           <Header />
           <div className='main'>
-            <p className='title'>GOOD ATFERNOON</p>
+            <p className='title'>Welcome, {nowUser?.firstName}</p>
             <div className='button' onClick={() => {
               setClassID(0)
               navigate('/clinical-studies')
@@ -114,7 +114,7 @@ function MenuPage() {
         <div className='MenuPage not-admin'>
           <Header />
           <div className='main'>
-            <p className='title'>GOOD AFTERNOON</p>
+            <p className='title'>Welcome, {nowUser?.firstName}</p>
             <div className='button' onClick={() => {
               setClassID(0)
               navigate('/clinical-studies')

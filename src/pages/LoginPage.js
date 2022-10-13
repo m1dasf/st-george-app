@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/actions/index';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import LogoFull from '../assets/logo-full.png';
+
 
 function LoginPage() {
     const loginFlag = useSelector(state => state.loginFlag);
@@ -10,7 +12,7 @@ function LoginPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const logiN = () => {
-        axios.post(baseUrl+'/user/check-user', { email: email, password: password })
+        axios.post(baseUrl + '/user/check-user', { email: email, password: password })
             .then(res => {
                 if (res.data[0]) {
                     dispatch(login(res.data[0]));
@@ -30,8 +32,11 @@ function LoginPage() {
     })
     return (
         <div className='LoginPage'>
-            <p className='title'>Hospital Name</p>
-            {/* <p className='title'>Message me on Whatsapp (+12762601724)</p> */}
+            <div className='logo'>
+                <img src={LogoFull} alt="logo-full" />
+            </div>
+            <p className='title'>St George Hospital</p>
+            <p className='sub-title'>Cancer Care Center</p>
             <div className='input-item'>
                 <p>Email</p>
                 <div className='input-box'>
@@ -45,7 +50,6 @@ function LoginPage() {
                 </div>
             </div>
             <div className='button' onClick={logiN}>LOGIN</div>
-            <p className='forgot-password'><u>Forgot your password?</u></p>
         </div>
     )
 }

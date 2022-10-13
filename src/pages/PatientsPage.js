@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import GoBackButton from '../components/GoBackButton'
 import Header from '../components/Header'
@@ -19,7 +19,7 @@ function PatientsPage() {
     }
     const [patientArray, setPatientArray] = useState([])
     useEffect(() => {
-        const tempObject = {studyId : currentStudy_id}
+        const tempObject = { studyId: currentStudy_id }
         axios.post(baseUrl + '/study/study-all-patients', tempObject)
             .then(res => {
                 setPatientArray(res.data)
@@ -34,8 +34,8 @@ function PatientsPage() {
                 <div className='top'>
                     <div className='top-right'>
                         <p>ENROLLED : {patientArray?.length}</p>
-                        <p>{(currentClassId===0) ? 'CLINICAL STUDY' : 'TRIAL ORGANISATION'}</p>
-                        <p>SORT BY NAME</p>
+                        <p>{(currentClassId === 0) ? 'CLINICAL STUDY' : 'TRIAL ORGANISATION'}</p>
+                        <p></p>
                     </div>
                 </div>
                 <div className='bottom'>
@@ -88,8 +88,8 @@ function PatientsPage() {
                             <div className='button'>SEARCH FOR PATIENT</div>
                             {
                                 (userType === 'stuff') ?
-                                <div className='button' onClick={()=>{navigate('/all-patients-list')}}>ADD A NEW PATIENT</div>
-                                : <></>
+                                    <div className='button' onClick={() => { navigate('/all-patients-list') }}>ADD A NEW PATIENT</div>
+                                    : <></>
                             }
                         </div>
                     </div>
@@ -97,13 +97,13 @@ function PatientsPage() {
                         {
                             patientArray?.map((item, index) => {
                                 return (
-                                    <div className='patient-item' key={'patient-item'+index}
-                                    onClick={()=>{
-                                        setPatientID(index);
-                                        dispatch(setCurrentPatient(item));
-                                        if(userType === 'stuff') navigate('/one-patient')
-                                        else navigate('/observations')
-                                    }}>
+                                    <div className='patient-item' key={'patient-item' + index}
+                                        onClick={() => {
+                                            setPatientID(index);
+                                            dispatch(setCurrentPatient(item));
+                                            if (userType === 'stuff') navigate('/one-patient')
+                                            else navigate('/observations')
+                                        }}>
                                         <div className='patient-item-left'>
                                             <div className='patient-item-data'>
                                                 <p>PATIENT ID :</p>

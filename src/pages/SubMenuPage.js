@@ -19,16 +19,16 @@ function SubMenuPage(props) {
     const setStudy_ID = (id) => {
         dispatch(setStudy_Id(id));
     }
-    useEffect(()=>{
+    useEffect(() => {
         const classObject = {
-            classTitle: (currentClassId===0)? 'Clinical Study' : 'Trial Organisation'
+            classTitle: (currentClassId === 0) ? 'Clinical Study' : 'Trial Organisation'
         }
         axios.post(baseUrl + '/class/class-all-studies', classObject)
-        .then(res => {
-            setStudyArray(res.data)
-        })
-        .catch((error) => { });
-    },[currentClassId, baseUrl])
+            .then(res => {
+                setStudyArray(res.data)
+            })
+            .catch((error) => { });
+    }, [currentClassId, baseUrl])
     return (
         <div className='SubMenuPage'>
             <Header />
@@ -38,7 +38,7 @@ function SubMenuPage(props) {
                 <div className='button-grid'>
                     {
                         (userType === 'stuff') ?
-                            <div className='button opacity' onClick={() => {navigate('/new-study')}}>CREATE A NEW {currentClassId === 0 ? 'CLINICAL STUDY' : 'TRIAL ORGANISATION'}</div>
+                            <div className='button opacity' onClick={() => { navigate('/new-study') }}>CREATE A NEW {currentClassId === 0 ? 'CLINICAL STUDY' : 'TRIAL ORGANISATION'}</div>
                             : <></>
                     }
                     {
@@ -48,7 +48,8 @@ function SubMenuPage(props) {
                                     setStudyID(index)
                                     setStudy_ID(item._id)
                                     navigate('/patients')
-                                }}>{item.studyTitle}</div>
+                                }}>{item.studyTitle}
+                            </div>
                         })
                     }
                 </div>

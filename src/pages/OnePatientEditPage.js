@@ -67,10 +67,14 @@ function OnePatientEditPage() {
                     <p>Blood Group</p>
                     <div className='input-box'>
                         <select value={bloodGroup} onChange={(e) => { setBloodGroup(e.target.value) }} >
-                            <option>A</option>
-                            <option>B</option>
-                            <option>AB</option>
-                            <option>O</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
                         </select>
                     </div>
                 </div>

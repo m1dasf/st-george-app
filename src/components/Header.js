@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { ReactComponent as UserIcon } from "../assets/user.svg";
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/actions/index';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import LogoFull from '../assets/logo-full.png';
 
 function Header() {
     const dispatch = useDispatch();
@@ -11,16 +12,18 @@ function Header() {
     const [userHover, setUserHover] = useState(false)
     return (
         <div className='header'>
-            <p className='center'>Hospital Name</p>
-            <div className='right'  onMouseLeave={()=>setUserHover(false)}>
-                <p>{nowUser?.email}</p>
-                <UserIcon onClick={()=>setUserHover(true)}/>
-                <div className={userHover?'dropdown-menu':'hidden'}>
-                    <p>{nowUser?.email}</p>
+            <div className='header-logo'>
+                <img src={LogoFull} alt="logo" width="47" height="47" onClick={() => navigate('/menu')} />
+            </div>
+            <p className='center'>St George Hospital Cancer Care Center</p>
+            <div className='right'  onClick={() => setUserHover(true)} onMouseLeave={() => setUserHover(false)}>
+                <p>{nowUser?.firstName} {nowUser?.lastName}</p>
+                <UserIcon/>
+                <div className={userHover ? 'dropdown-menu' : 'hidden'}>
+                    <p>{nowUser?.firstName} {nowUser?.lastName}</p>
                     <p>User Type : {nowUser?.userType}</p>
                     <div className='horizontal-line'></div>
-                    <p className='hover-pointer'>Profile</p>
-                    <p className='hover-pointer' onClick={()=>{
+                    <p className='hover-pointer' onClick={() => {
                         dispatch(logout());
                         navigate('/login')
                     }}>Log out</p>

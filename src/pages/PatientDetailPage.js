@@ -18,7 +18,7 @@ function PatientDetailPage() {
                         <p>PATIENT DETAILS</p>
                     </div>
                     <div className='top-right'>
-                        <p>OBERVATIONS</p>
+                        <p>OBSERVATIONS</p>
                     </div>
                 </div>
                 <div className='bottom'>

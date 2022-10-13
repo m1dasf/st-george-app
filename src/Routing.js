@@ -18,8 +18,7 @@ import ObservationsPage from './pages/ObservationsPage';
 
 function Routing() {
     const loginFlag = useSelector(state => state.loginFlag);
-    // if (!loginFlag) return <LoginPage />
-    // else
+
     return (
         <Router basename={process.env.PUBLIC_URL}>
             <Routes>

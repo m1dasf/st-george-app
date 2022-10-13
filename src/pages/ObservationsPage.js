@@ -30,8 +30,8 @@ function ObservationsPage() {
                     </div>
                     <div className='top-right'>
                         <p>ENROLLED : {observationArray?.length}</p>
-                        <p>{(currentClassId === 0) ? 'CLINICAL STUDY' : 'TRIAL ORGANISATION'}</p>
-                        <p>SORT BY NAME</p>
+                        <p>OBSERVATIONS</p>
+                        <p></p>
                     </div>
                 </div>
                 <div className='bottom'>

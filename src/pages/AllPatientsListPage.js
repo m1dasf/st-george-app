@@ -32,7 +32,7 @@ function AllPatientsListPage() {
                     <div className='top-right'>
                         <p>ENROLLED : {allPatient.length}</p>
                         <p>ALL PATIENTS</p>
-                        <p>SORT BY NAME</p>
+                        <p></p>
                     </div>
                 </div>
                 <div className='bottom'>
@@ -101,7 +101,6 @@ function AllPatientsListPage() {
                                                     axios.put(baseUrl + '/study/add-a-patient', classUpdateObject)
                                                         .then(res => {
                                                             if (res.data.success) {
-                                                                // alert("Added a patient to a Clinical Study")
                                                                 navigate(-1)
                                                             }
                                                         })
@@ -111,7 +110,6 @@ function AllPatientsListPage() {
                                                     axios.put(baseUrl + '/study/add-a-patient', classUpdateObject)
                                                         .then(res => {
                                                             if (res.data.success) {
-                                                                // alert("Added a patient to a Trial Organisation")
                                                                 navigate(-1)
                                                             }
                                                         })
@@ -128,9 +126,6 @@ function AllPatientsListPage() {
                                                         dispatch(setCurrentPatient(item));
                                                         navigate('/one-patient')
                                                     }
-                                                    // else{
-                                                    //     alert("This function only available for stuffs.")
-                                                    // }
                                             }
                                         }}>
                                         <div className='patient-item-left'>

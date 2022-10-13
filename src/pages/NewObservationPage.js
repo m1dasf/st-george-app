@@ -26,7 +26,7 @@ function NewObservationPage() {
                         <p>PATIENT DETAILS</p>
                     </div>
                     <div className='top-right'>
-                        <p>NEW OBERVATION</p>
+                        <p>NEW OBSERVATION</p>
                     </div>
                 </div>
                 <div className='bottom'>
@@ -132,9 +132,9 @@ function NewObservationPage() {
                             </div>
                         </div>
                         <div className='observation-item'>
-                            <p>PULSE OXIMETRY :</p>
+                            <p>PULSE OXIDIMETRY :</p>
                             <div className='input-box'>
-                                <input placeholder='Pluse Oximetry'
+                                <input placeholder='Pulse Oximetry'
                                     value={pulseOximetry} onChange={(e) => { SetPulseOximetry(e.target.value) }} />
                             </div>
                         </div>

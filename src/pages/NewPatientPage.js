@@ -6,7 +6,7 @@ import GoBackButton from '../components/GoBackButton';
 
 function NewPatientPage() {
     const baseUrl = useSelector(state => state.baseUrl);
-    const [patientId, setPatientId] = useState('')    
+    const [patientId, setPatientId] = useState('')
     const [givenName, setGivenName] = useState('')
     const [middleName, setMiddleName] = useState('')
     const [surName, setSurName] = useState('')
@@ -18,7 +18,7 @@ function NewPatientPage() {
     return (
         <div className='NewPatientPage'>
             <Header />
-            <GoBackButton/>
+            <GoBackButton />
             <div className='main'>
                 <p className='title'>Create a new patient</p>
                 <div className='input-item'>
@@ -64,10 +64,14 @@ function NewPatientPage() {
                     <p>Blood Group</p>
                     <div className='input-box'>
                         <select value={bloodGroup} onChange={(e) => { setBloodGroup(e.target.value) }} >
-                            <option>A</option>
-                            <option>B</option>
-                            <option>AB</option>
-                            <option>O</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
                         </select>
                     </div>
                 </div>
@@ -106,7 +110,7 @@ function NewPatientPage() {
                                     setSurName('')
                                     setGender('male')
                                     setDataOfBirth('')
-                                    setBloodGroup('A')
+                                    setBloodGroup('A+')
                                     setDiagnosis('')
                                     setDataOfFirstTreatment('')
                                 }

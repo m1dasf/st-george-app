@@ -32,8 +32,6 @@ function NewStudyPage() {
                         axios.post(baseUrl + '/study/create-study', studyObject)
                             .then(res => {
                                 if (res.data?.success) {
-                                    // alert('A New Study Successfully Created..')
-                                    // setNewStudyName('')
                                     navigate(-1)
                                 }
                             })
