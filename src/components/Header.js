@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ReactComponent as UserIcon } from "../assets/user.svg";
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/actions/index';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LogoFull from '../assets/logo-full.png';
 
 function Header() {
